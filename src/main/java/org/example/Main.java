@@ -35,7 +35,7 @@ public class Main {
                 if (diversion < 10) {
                     diversion += 3;
                     saciedad -= 1;
-                    energia -= 1;
+                    energia -= 2;
                     if (diversion > 10) {
                         diversion = 10;
                     }
@@ -48,8 +48,8 @@ public class Main {
             //CANSADO
             else if (opcion == 4) {
                 if (energia < 10) {
-                    energia += 3;
-                    saciedad += 3;
+                    energia += 4;
+                    saciedad -= 3;
                     diversion -= 2;
                     if (energia > 10) {
                         energia = 10;
