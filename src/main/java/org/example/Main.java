@@ -1,8 +1,6 @@
 package org.example;
 import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
     static int saciedad = 6;
@@ -16,7 +14,10 @@ public class Main {
             opcion = menuPrincipal();
             if (opcion == 1) {
                 mostrarEstado();
-            } else if (opcion == 2) {
+
+            }
+            //HAMBRIENTO
+            else if (opcion == 2) {
                 if (saciedad < 10) {
                     saciedad += 3;
                     diversion -= 1;
@@ -29,6 +30,22 @@ public class Main {
                     System.out.println("No tengo hambre");
                 }
             }
+            //TRISTE
+            else if (opcion == 3) {
+                if (diversion < 10) {
+                    diversion += 3;
+                    saciedad -= 1;
+                    energia -= 1;
+                    if (diversion > 10) {
+                        diversion = 10;
+                    }
+                    System.out.println("¡¡Gracias por jugar conmigo!!");
+                    mostrarEstado();
+                } else {
+                    System.out.println("Ahora no me apetece jugar.");
+                }
+            }
+
         } while (opcion != 0);
     }
 
