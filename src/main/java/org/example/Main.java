@@ -45,6 +45,22 @@ public class Main {
                     System.out.println("Ahora no me apetece jugar.");
                 }
             }
+            //CANSADO
+            else if (opcion == 4) {
+                if (energia < 10) {
+                    energia += 3;
+                    saciedad += 3;
+                    diversion -= 2;
+                    if (energia > 10) {
+                        energia = 10;
+                    }
+                    System.out.println("¡¡Gracias por mandarme a dormir !!");
+                    mostrarEstado();
+                } else {
+                    System.out.println("No tengo sueño.");
+                }
+
+            }
 
         } while (opcion != 0);
     }
