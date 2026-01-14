@@ -11,10 +11,24 @@ public class Main {
 
     public static void main(String[] args) {
         System.out.println("¡Hola git!");
-        int opcion = menuPrincipal();
-        if(opcion == 1) {
-            mostrarEstado();
-        }
+        int opcion;
+        do{
+            opcion = menuPrincipal();
+            if(opcion == 1) {
+                mostrarEstado();
+                }else if(opcion == 2) {
+                if (saciedad < 10) {
+                        saciedad += 5;
+                        diversion -= 1;
+                        if(saciedad > 10){
+                            saciedad = 10;
+                        }
+                    System.out.println("¡¡Gracias por darme de comer!!");
+                } else {
+                    System.out.println("No tengo hambre");
+                }
+            }
+        }while (opcion != 0);
     }
 
     private static int menuPrincipal(){
@@ -69,6 +83,5 @@ public class Main {
             System.out.println("/|_|\\ ");
             System.out.println(" | |");
         }
-
     }
 }
