@@ -12,9 +12,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("¡Hola git!");
         int opcion = menuPrincipal();
-        mostrarEstado();
-
+        if(opcion == 1) {
+            mostrarEstado();
         }
+    }
 
     private static int menuPrincipal(){
         Scanner sc = new Scanner (System.in);
