@@ -14,12 +14,11 @@ public class Main {
             opcion = menuPrincipal();
             if (opcion == 1) {
                 mostrarEstado();
-
             }
             //HAMBRIENTO
             else if (opcion == 2) {
                 if (saciedad < 10) {
-                    saciedad += 3;
+                    saciedad += 2;
                     diversion -= 1;
                     if (saciedad > 10) {
                         saciedad = 10;
@@ -61,7 +60,22 @@ public class Main {
                 }
 
             }
+            //PASEAR
+            else if (opcion == 5) {
+                if (diversion < 10) {
+                    diversion += 3;
+                    energia -= 2;
+                    saciedad -= 1;
 
+                    if (diversion > 10) {
+                        diversion = 10;
+                    }
+                    System.out.println("¡¡Gracias por pasear conmigo!!");
+                    mostrarEstado();
+                } else {
+                    System.out.println("Ahora no me apetece pasear.");
+                }
+            }
         } while (opcion != 0);
     }
 
@@ -74,17 +88,18 @@ public class Main {
             System.out.println("2. Comer");
             System.out.println("3. Jugar");
             System.out.println("4. Dormir");
+            System.out.println("5. Pasear");
             System.out.println("------------");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción del menú: ");
 
             opcion = sc.nextInt();
 
-            if (opcion < 0 || opcion > 4) {
+            if (opcion < 0 || opcion > 5) {
                 System.out.println("Opción no válida. Inténtelo de nuevo.");
             }
 
-        } while (opcion < 0 || opcion > 4);
+        } while (opcion < 0 || opcion > 5);
         return opcion;
     }
     private static void mostrarEstado() {
