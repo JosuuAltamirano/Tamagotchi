@@ -5,34 +5,35 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
 
-    static  int saciedad = 6;
-    static  int energia = 6;
-    static  int diversion = 6;
+    static int saciedad = 6;
+    static int energia = 6;
+    static int diversion = 6;
 
     public static void main(String[] args) {
         System.out.println("¡Hola git!");
         int opcion;
-        do{
+        do {
             opcion = menuPrincipal();
-            if(opcion == 1) {
+            if (opcion == 1) {
                 mostrarEstado();
-                }else if(opcion == 2) {
+            } else if (opcion == 2) {
                 if (saciedad < 10) {
-                        saciedad += 5;
-                        diversion -= 1;
-                        if(saciedad > 10){
-                            saciedad = 10;
-                        }
+                    saciedad += 3;
+                    diversion -= 1;
+                    if (saciedad > 10) {
+                        saciedad = 10;
+                    }
                     System.out.println("¡¡Gracias por darme de comer!!");
+                    mostrarEstado();
                 } else {
                     System.out.println("No tengo hambre");
                 }
             }
-        }while (opcion != 0);
+        } while (opcion != 0);
     }
 
-    private static int menuPrincipal(){
-        Scanner sc = new Scanner (System.in);
+    private static int menuPrincipal() {
+        Scanner sc = new Scanner(System.in);
         int opcion;
 
         do {
@@ -53,32 +54,31 @@ public class Main {
         } while (opcion < 0 || opcion > 4);
         return opcion;
     }
-    private static void mostrarEstado(){
-    //Fin del juego
-         if(saciedad == 0 || energia == 0 || diversion == 0){
+    private static void mostrarEstado() {
+        //Fin del juego
+        if (saciedad == 0 || energia == 0 || diversion == 0) {
             System.out.println("(x_x) :( Game Over ):");
             System.out.println("/|_|\\");
             System.out.println(" | |");
         }
-    //Contento
-        else if(saciedad > 5 && energia >5 && diversion >5){
+        //Contento
+        else if (saciedad > 5 && energia > 5 && diversion > 5) {
             System.out.println("(•‿•) ¡Estoy feliz!");
             System.out.println("/|_|\\");
-                    System.out.println(" | |");
+            System.out.println(" | |");
         }
-    //Triste|aburrido
-        else if(diversion <= 4){
+        //Triste|aburrido
+        else if (diversion <= 4) {
             System.out.println("(-︵-) Estoy aburrido");
             System.out.println("/|_|\\ ¡Juega conmigo!");
             System.out.println(" / \\");
         }
-    //Cansado
-        else if(energia <= 4){
+        //Cansado
+        else if (energia <= 4) {
             System.out.println("(-_-) Zzz ");
             System.out.println("/|_|\\ ");
             System.out.println("// \\");
-        }
-        else if(saciedad <= 4){
+        } else if (saciedad <= 4) {
             System.out.println("(._.) Tengo hambre");
             System.out.println("/|_|\\ ");
             System.out.println(" | |");
